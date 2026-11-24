@@ -1,0 +1,13 @@
+name: probe3
+on:
+  workflow_dispatch:
+jobs:
+  intel:
+    runs-on: macos-15-intel
+    steps: [{run: echo intel ok}]
+  m26:
+    runs-on: macos-26
+    steps: [{run: echo m26 ok}]
+  win:
+    runs-on: windows-latest
+    steps: [{run: echo win ok}]
