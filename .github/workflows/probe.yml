@@ -1,0 +1,12 @@
+name: probe
+on:
+  workflow_dispatch:
+jobs:
+  lin:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hello; uname -a
+  mac:
+    runs-on: macos-15
+    steps:
+      - run: echo hello-mac
