@@ -1,0 +1,19 @@
+name: probe-runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, macos-26]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - name: whoami
+        run: |
+          uname -a
+          sw_vers || true
+          xcodebuild -version || true
